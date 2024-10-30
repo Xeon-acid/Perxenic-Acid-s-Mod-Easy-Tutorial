@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage[colorlinks]{hyperref}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{menukeys}
+\usepackage{fontawesome}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{subfigure}
+
+\graphicspath{{./pic/}}
+
+\makeatletter
+\tw@make@key@box{OS@mac}{\faApple}
+\tw@make@key@box{OS@win}{\faWindows}
+\tw@make@key@macro*{\OS}
+\makeatother
+
+\newtheorem{definition}{Definition}
+
+\setlength{\parskip}{1em}
+
+\geometry{scale=0.7}
+
+
+\title{基于 3DMigoto 的 MOD 制作简易教程}
+\author{Perxenic Acid}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\DeclareMathOperator{\Mod}{mod}
+\mathchardef\dash=`-
+
+\newfontfamily{\Brachetto}{Brachetto.ttf}
+
+\begin{document}
+    % \maketitle
+    \begin{titlepage}
+        \centering
+        \vspace*{2cm}
+
+        {\huge \bfseries 基于 3DMigoto 的 MOD 制作简易教程 \par}
+        \vspace{1.5cm}
+        {\Large 撰稿: {\Brachetto Perxenic Acid}, \par}
+        \vspace{0.5cm}
+        {\large 校对与测试: Bulldozer, \par}
+        \vspace{1cm}
+        {\large \today \par}
+
+        
+        \vfill
+        {\footnotesize 注: 撰稿按贡献程度排序, 校对与测试按先后参与时间排序.}
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+    \vspace*{0pt}\vfill
+        \begin{center}
+            {\Huge{\textbf{\color{red!90!black}呼吁}}}
+        \end{center}
+        \addcontentsline{toc}{section}{呼吁}
+            \noindent{\Large{\textbf{\color{red!90!black}请不要倒卖他人的免费 MOD! 请不要拿 NSFW MOD 跳脸官方!}}}\vfill\clearpage
+        \section*{概述}
+        \addcontentsline{toc}{section}{概述}
+            \par 本文将会基于原神 MOD 大致介绍借助 3DMigoto 在基于 Unity (2D/3D) 实现的游戏中使用 MOD、制作 MOD 之方法. 本文所有{\color{magenta}洋红色文本}均为可点击访问的网址(这个除外), 如果不可点击, 请使用 PC 查看本文档而非手机. 所有{\color{red}红色文本}均为可点击跳转的文内链接(这个除外). 笔者并不喜欢重复强调一些已经说明的事情, 如果发现某一部分看不懂, 请翻到之前的部分再看看.
+    \include{Player}
+    \include{Modeler}
+    \include{Engineer}
+\end{document}

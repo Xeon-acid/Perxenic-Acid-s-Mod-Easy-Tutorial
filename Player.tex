@@ -1,0 +1,36 @@
+\section{Player}
+        无论读者希望制作 MOD 还是仅仅希望游玩 MOD, 都应当基本了解本部分内容.
+        \subsection{准备工作}
+            \par 首先需要一款基于 Unity 的游戏, 据笔者所知, 原神、崩铁、绝区零、崩三、来自星尘这些游戏均采用 Unity 3D 实现, 这些游戏基本都可以使用 3DMigoto 使用 MOD. 对于其他游戏, 有可能并非使用 Unity 实现, 也许使用的是 Unreal Engine 或其他引擎, 这些游戏可以通过其他工具使用 MOD, 但笔者并不了解, 在此不详述了.
+            \par 接下来, 需要拿到 3DMigoto. 根据你需要的游戏不同, 3DM 有不同的特化版本, 如 Genshin Impact Model Importer (i.e. GIMI), SRMI, ZZMI, HIMI 等\footnote{鸣潮的 MOD 虽然通过完全不同的方式实现, 但其 MOD 加载器采用相近的形式命名为 WWMI.}, 有些游戏没有这样的特化版本, 通常使用 GIMI 即可. 可以在 GitHub 下载这些工具, 比如 GIMI 可以在\href{https://github.com/SilentNightSound/GI-Model-Importer/releases/tag/v7.0}{这里}点击进入下载界面, 这里会提供两个版本的 \texttt{.zip} 文件, 一个是开发者版本, 一个是游玩者版本, 通常推荐直接下载前者, 后者所谓的精简一些, 牺牲了大量功能. 其他游戏在使用 MOD 时所需的 MOD 加载器, 有时可以直接使用原神 MOD 加载器 GIMI, 也可以自行查找 GitHub 库, 恕不赘述.
+            \par (强烈推荐) 使用一个更趁手的文本编辑器, 比如 Visual Studio Code, 可以点击\href{https://vscode.download.prss.microsoft.com/dbazure/download/stable/384ff7382de624fb94dbaf6da11977bba1ecd427/VSCodeUserSetup-x64-1.94.2.exe}{这里}以\textbf{直接}下载. 有些读者或许习惯使用 NotePad (记事本) 编辑文本, 请改掉这个\textbf{陋习}.
+        \subsection{配置}
+            \par 需要相当提前地指出: 3DMigoto 工具能够实现 MOD 热重载, 这也意味着增删补改 MOD 文件不需要重启游戏\footnote{绝大多数情况如此.}.
+            \par 下载解压好 GIMI 后, 于其根目录打开 \texttt{d3dx.ini}, 定位到其第 539 行, 替换内容为
+            \begin{lstlisting}[basicstyle=\ttfamily]
+        target = D:\Genshin Impact\Genshin Impact Game\YuanShen.exe
+            \end{lstlisting}
+            后面跟的地址并不固定, 依读者设备上的 \texttt{YuanShen.exe} 所在路径而定. \keys{Ctrl + S}保存.
+            \par 接下来测试是否成功配置. 在 GIMI 根目录启动可执行文件 \texttt{3DMigoto Loader.exe}, 待控制台窗口出现并显示
+            \begin{lstlisting}[basicstyle=\ttfamily]
+    ------------------------------- 3DMigoto GIMI Loader ------------------------------
+
+    d3d11.dll description: "3Dmigoto - d3d11.dll"
+    3DMigoto Version 1.3.16
+    Loaded G:\3dmigoto\d3d11.dll
+
+    3DMigoto ready - Now run the game.            
+            \end{lstlisting}
+            后, 启动原神 (通过官方/第三方启动器启动或直接启动游戏本体均不影响.), 在进入 ``原神'' 启动 Logo 后, 在确保 \keys{NumLock} 已启用的前提下点按 \keys{Num0}\footnote{如果不知道这是什么的话: 请点按小键盘区的数字键 0.}, 如果屏幕上下出现绿色文本, 则说明配置成功. 再次点按 \keys{Num0} 关闭这些文本. 如果并未出现, 说明使用的是游玩者版本, 或者并未正确配置, 可以在下一步继续审查.
+            \par 进行下一步之前\textbf{无需}关闭游戏.
+
+        \subsection{使用已有的 MOD}
+            \par 首先请\href{https://filecache33.gamebanana.com/mods/lumine_lantern_rite.zip}{点击}以下载笔者的拙作, 这是荧妹的一个 MOD, 基于他人的 MOD 进行了简单的重着色处理. 如果第一次使用该网站, 或许需要注册一个账号.
+            \par GIMI 根目录下应当存在名为 \texttt{Mods} 的子目录, 打开该目录, 将下载的压缩文件解压缩至该处, 然后回到游戏, 点按 \keys{F10} 以重载 MOD. 如果发现荧妹的模型发生修改, 说明 MOD 成功使用. 在 GameBanana 上下载的 MOD, 有时并非置于 \texttt{Mods} 目录, 而是 \texttt{ShaderFixed} 或 \texttt{ShaderCache}, 一般在 MOD 简介中有特别说明, 留意即可.
+
+            \subsubsection{关于 MOD 管理}
+                \par 3DMigoto 的功能非常强大, 基本可以读取任意层级子目录的 MOD, 甚至所有 MOD 混置于一处也能够正确识别 (不可有重名文件). 尽管如此, 仍然推荐细致分类所有 MOD, 因为对同一个对象的多个 MOD 在同时启用时, 3DM 会老老实实同时加载两份 MOD, 这几乎一定会导致游戏中出现极其抽象的模型碎块.
+                \par 3DM 读取 MOD 依靠的是 \texttt{.ini} 文件的内容, 可以更改其后缀名以禁用 MOD. 一个更规范的方式是, 添加字符串 \texttt{DISABLED} 于任何一个需要禁用的文件或目录的前缀名之前, 比如需要禁用 \texttt{Lumine.ini}, 则将其改名为 \texttt{{\color{blue!50}DISABLED}Lumine.ini} 或 \texttt{Lumine.ini{\color{blue!50};}}, 或者将其父级目录 \texttt{LumineMod} (或者其他任何你喜欢的名字, 3DM 不会理会这些目录名.) 重命名为 \texttt{{\color{blue!50}DISABLED}LumineMod}.
+                \par 值得指出, 存在较为方便的 MOD 管理程序, 但笔者不感兴趣, 并不了解.
+        \subsection{在哪下载 MOD?}
+            \par 前文提到的 \href{https://gamebanana.com/}{GameBanana}. NSFW 的 MOD 需要注册账号并在设置中取消 NSFW MOD 隐藏, 不过该网站不允许任何有关萝莉的 NSFW MOD.

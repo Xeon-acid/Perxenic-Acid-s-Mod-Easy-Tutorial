@@ -1,0 +1,25 @@
+\contentsline {section}{呼吁}{3}{section*.1}%
+\contentsline {section}{概述}{4}{section*.2}%
+\contentsline {section}{\numberline {I}Player}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}准备工作}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}配置}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}使用已有的 MOD}{6}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}关于 MOD 管理}{6}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}在哪下载 MOD?}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {II}Modeler}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}进一步的准备}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}获取源模型}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}第一个 MOD: 赤瞳荧妹——学习导入导出}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}没有裙摆的娜维娅——学习删除部件}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}让荧妹的发饰换个位置——学习权重传递}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}让荧妹戴上娜维娅的礼帽——学习 UV 与纹理编辑}{12}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}扒掉荧妹的衣服!——学习逆向 MOD}{14}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}荧妹! 大欧派!——学习简单的雕刻}{14}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}自定义玩家头像——学习 2D 纹理 MOD 的制作}{14}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}让荧妹变成符太卜!——不同游戏之间的模型移植}{14}{subsection.2.10}%
+\contentsline {section}{\numberline {III}Engineer}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Linear Algebra Basic}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Transformation}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Rasterization}{15}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Shader}{15}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Buffer}{15}{subsection.3.5}%
